@@ -1,9 +1,11 @@
-peline:
-  scp:
-    image: appleboy/drone-scp
-    host: http://35.194.187.126:8080
-    username: appleboy
-    password: 12345678
-    port: 4430
-    target: /home/deploy/web
-    source: release.tar.gz
+pipeline:
+  frontend:
+    image: node:8.1.2
+    group: laravel
+    commands:
+      - node -v
+      - npm -v
+      - yarn --version
+      - yarn config set cache-folder .yarn-cache
+      - yarn install
+      - yarn run production
