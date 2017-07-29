@@ -1,0 +1,9 @@
+peline:
+  scp:
+    image: appleboy/drone-scp
+    host: http://35.194.187.126:8080
+    username: appleboy
+    password: 12345678
+    port: 4430
+    target: /home/deploy/web
+    source: release.tar.gz
